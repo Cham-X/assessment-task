@@ -163,7 +163,7 @@ const TodoList = () => {
               onChange={(e) => setCurrentTask(e.target.value)}
               errors={{}}
             />
-            <div className="flex justify-end gap-2 mt-4">
+            <div className="flex justify-end gap-2 mt-4 ">
               <CustomButton color="primary" onClick={handleEditTask}>
                 Save
               </CustomButton>
@@ -171,7 +171,7 @@ const TodoList = () => {
           </>
         )}
         {modalType === "delete" && (
-          <div className="flex justify-end gap-2 mt-4">
+          <div className="flex justify-end gap-2 mt-4 btn-right">
             <CustomButton color="danger" onClick={handleDeleteTask}>
               Delete
             </CustomButton>
@@ -179,8 +179,8 @@ const TodoList = () => {
         )}
       </Modal>
 
-      <div>
-        <CustomButton color="default" action={handleNextTask}>
+      <div className='btn-right'>
+        <CustomButton color="default" action={handleNextTask} >
           Next task
         </CustomButton>
       </div>

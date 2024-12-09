@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CustomButton from './components/custom-button/CustomButton';
+import { useNavigate } from 'react-router-dom';
 
 interface PaginatedDataProps {
   apiEndpoint?: string; // Optional API endpoint, default is provided
@@ -16,6 +17,8 @@ const DataFetching: React.FC<PaginatedDataProps> = (
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const pageSize = 10; // Number of items per page
+
+  const navigate = useNavigate()
 
   // Fetch data from the API
   const fetchData = async (page: number) => {
@@ -44,7 +47,11 @@ const DataFetching: React.FC<PaginatedDataProps> = (
 
   // Handle page navigation
   const goToNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+    if (currentPage < totalPages) {
+      setCurrentPage((prev) => prev + 1);
+    } else {
+      navigate("/multiform"); // Navigate to MultiForm when on the last page
+    }
   };
 
   const goToPreviousPage = () => {
@@ -87,9 +94,8 @@ const DataFetching: React.FC<PaginatedDataProps> = (
         <CustomButton
           color="primary"
           onClick={goToNextPage}
-          disabled={currentPage === totalPages}
         >
-          Next
+          {currentPage === totalPages ? "Next Task" : "Next"}
         </CustomButton>
       </div>
     </div>

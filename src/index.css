@@ -176,8 +176,15 @@ a {
 .btn-div{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
+}
+
+.btn-right{
+  display: flex;
+  align-items: end;
+  justify-self: end;
+  justify-content: center;
 }
 
 .todo-text{
