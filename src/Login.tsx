@@ -6,11 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { EMAIL_ADDRESS_REGEX, USERNAME_REGEX } from './components/form/TextInput';
 import { useFormContext } from './context/FormContext';
 
-interface LoginProps {
-    onNext: (formData: { email: string; username: string; password: string }) => void; // Prop to handle navigation to the next step
-}
 
-const Login: React.FC<LoginProps> = ({ onNext }) => {
+const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false)
@@ -70,7 +67,7 @@ const Login: React.FC<LoginProps> = ({ onNext }) => {
             console.log(formData)
             setTimeout(() => {
                 setIsLoading(false);
-                onNext(formData)
+                navigate("/todolist"); // Navigate to the next page after success
             }, 1000);
         }
     };
@@ -124,7 +121,7 @@ const Login: React.FC<LoginProps> = ({ onNext }) => {
                     disabled={isLoading}
                     overrideStyle={"block w-full"}
                 >
-                    {isLoading ? <span>{"Loading ..."}</span> : <span>{"Next"}</span>}
+                    {isLoading ? <span>{"Loading ..."}</span> : <span>{"Start"}</span>}
                 </CustomButton>
             </div>
         </form>
