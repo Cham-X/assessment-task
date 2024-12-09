@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Wrapper around the input field */
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1rem; /* Space between inputs */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50vw; /* Restricting the width to 50% of the viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed the maximum width */
+}
+
+/* Label styling */
+.input-wrapper label {
+  margin-bottom: 0.25rem;
+  font-size: 1rem; 
+  font-weight: 500; 
+  color: #4b5563; 
+  text-transform: capitalize;
+}
+
+/* Input field styles */
+.text-input {
+  width: 100%; /* Input takes 100% of the width of its parent */
+  padding: 0.75rem 1.25rem; /* Padding for the input */
+  border: 1px solid #d1d5db; /* Default light gray border */
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: 400; /* Regular font weight */
+  color: #333333; /* Dark text color */
+  background-color: #ffffff; /* White background */
+  transition: all 0.3s ease; /* Smooth transition for border and focus states */
+}
+
+/* Focused state for the input */
+.text-input:focus {
+  border-color: #3b82f6; /* Blue border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 1px #3b82f6; /* Blue shadow */
+}
+
+/* Input field error state */
+.text-input.error {
+  border-color: #ef4444; /* Red border for error */
+  background-color: #fff0f0; /* Light red background for error */
+}
+
+/* Error message styles */
+.form-error {
+  color: #ef4444; /* Red color for error message */
+  font-size: 0.875rem; /* Smaller font size */
+  font-weight: 500; /* Medium weight for better readability */
+  margin-top: 0.25rem; /* Space above the error message */
+}
+
+/* Optional: Hover effect on the input */
+.text-input:hover {
+  border-color: #2563eb; /* Slightly darker blue when hovered */
+}
+
+.btn-brand {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  width: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Ensure anchor inherits button text color */
+}
+
+/* Additional button styles */
+.btn-brand p {
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* Disabled state for buttons */
+.btn-brand:disabled,
+.btn-brand[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Primary button */
+.btn-brand.bg-brand-blue {
+  background-color: #007bff; /* Custom primary color */
+  color: #ffffff; /* Text color for primary button */
+  border: 1px solid #007bff; /* Border color matching the background */
+}
+
+.btn-brand.bg-brand-blue:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.btn-brand.bg-brand-blue:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Focus outline */
+}
+
+/* Secondary button */
+.btn-brand.border-brand-blue {
+  background-color: transparent; /* No background */
+  color: #007bff; /* Text color for secondary button */
+  border: 1px solid #007bff; /* Border color matching text */
+}
+
+.btn-brand.border-brand-blue:hover {
+  background-color: #f1faff; /* Light background on hover */
+}
+
+.btn-brand.border-brand-blue:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Focus outline */
+}
+
+/* Default button */
+.btn-brand.text-grey\/50 {
+  background-color: transparent; /* No background */
+  color: rgba(0, 0, 0, 0.5); /* Light grey text */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Light grey border */
+}
+
+.btn-brand.text-grey\/50:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Light grey background on hover */
+}
+
+.btn-brand.text-grey\/50:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Focus outline */
+}
+
+/* Danger button */
+.btn-brand.bg-brand-red {
+  background-color: #dc3545; /* Red background */
+  color: #ffffff; /* White text */
+  border: 1px solid #dc3545; /* Red border */
+}
+
+.btn-brand.bg-brand-red:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.btn-brand.bg-brand-red:focus {
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.5); /* Focus outline */
+}
+
+.task-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.todo-text{
+  font-size: 1rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 50; /* Ensures it appears above everything else */
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 0.5rem; /* Rounded corners */
+  padding-inline: 3rem; /* Inner spacing */
+  padding-block: 1.5rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  width: 90%; /* Fullscreen fallback */
+  max-width: 600px; /* Max width for responsiveness */
+}
+
+
+.pagination-container {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.pagination-container ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Remove default list styling */
+}
+
+.pagination-container li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left; /* Align text to the left */
+  counter-increment: list-item; /* Increment counter for numbering */
+}
+
+.pagination-container li::before {
+  content: counter(list-item) ". "; /* Add numbering */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.pagination-container .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.pagination-container button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-container button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-container button:disabled {
+  background-color: #e0e0e0;
+  color: #a1a1a1;
+  cursor: not-allowed;
+}
+
+.pagination-container span {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+
