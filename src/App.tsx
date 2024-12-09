@@ -12,7 +12,7 @@ function App() {
   return (
     <FormProvider>
       <Routes>
-        <Route path='login' element={<Layout><Login /></Layout>} />
+        <Route path='/' element={<Layout><Login /></Layout>} />
         <Route path="datafetching" element={<Layout><DataFetching /></Layout>} />
         <Route path="todolist" element={<Layout><TodoList /></Layout>} />
         <Route path='multiform' element={<Layout><MultiStepForm /></Layout>} />
